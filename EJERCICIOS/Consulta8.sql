@@ -1,0 +1,4 @@
+#MOSTRAR DE CADA PAIS CUANTOS JUGADORES HAY
+USE nba;
+SELECT COUNT(Nombre) , Procedencia FROM jugadores
+GROUP BY Procedencia;

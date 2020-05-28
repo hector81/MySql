@@ -1,0 +1,5 @@
+#MOSTRAR CUANTOS EQUIPOS  HAY EN CADA CONFERENCIA QUE SEA CONFERENCIA ESTE
+USE nba;
+desc equipos;
+SELECT COUNT(Nombre) , Division FROM equipos where Conferencia LIKE 'East'
+GROUP BY Division;

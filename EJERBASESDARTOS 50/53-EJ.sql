@@ -1,0 +1,7 @@
+#53-OBTENER EL CODCOCHE DE AQUELLOS AUTOMOVILES QUE HAN SIDO COMPRADOS POR TODOS LOS
+# CLIENTES DE MADRID
+USE TABLASCOCHES;
+SELECT ventas.codcoche FROM ventas WHERE NOT EXISTS(
+					SELECT clientes.dni FROM clientes WHERE clientes.ciudad NOT LIKE 'MADRID' AND clientes.dni IN 
+                    (SELECT ventas.DNI FROM ventas)
+);
