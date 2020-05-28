@@ -1,0 +1,9 @@
+USE NEGOCIOS2011;
+DELIMITER $$
+CREATE PROCEDURE simpleproc (OUT param1 INT)
+BEGIN
+SELECT COUNT(*) INTO param1 FROM paises;
+END $$
+DELIMITER ;
+CALL simpleproc(@a);
+SELECT @a;

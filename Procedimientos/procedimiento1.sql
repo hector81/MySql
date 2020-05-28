@@ -1,0 +1,7 @@
+USE paises;
+DELIMITER $$ ##PARA ABRIR 
+CREATE PROCEDURE simpleproc (OUT param1 INT)
+BEGIN
+	SELECT COUNT(*) INTO param1 FROM paises;
+END $$
+DELIMITER ;  ##PARA CERRAR
