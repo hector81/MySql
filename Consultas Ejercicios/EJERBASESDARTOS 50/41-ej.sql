@@ -1,0 +1,6 @@
+#41-OBTENER EL NOMBRE Y EL APELLIDO DE LOS CLIENTES CUYO NOMBRE EMPIEZA POR A Y CUYO DNI ES MAYOR
+# QUE EL DE LOS CLIENTES QUE SON DE MADRID
+USE TABLASCOCHES; 
+SELECT clientes.nombre, clientes.apellidos FROM clientes
+WHERE clientes.nombre LIKE 'A%' AND clientes.dni > (SELECT clientes.dni FROM clientes WHERE
+clientes.ciudad LIKE 'BARCELONA' ORDER BY clientes.dni ASC LIMIT 1);
